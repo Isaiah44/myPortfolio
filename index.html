@@ -3,9 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Name | Portfolio</title>
+    <title>Isaiah Nnadi | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Isaiah Nnadi – Public Health student, developer & creative problem solver building impactful digital experiences."
+    />
+    <meta
+      name="keywords"
+      content="Isaiah, Portfolio, Web Development, Public Health, UI/UX, Data, AI"
+    />
     <link rel="stylesheet" href="app.css" />
     <link rel="icon" href="assets/favicon.ico" />
+
     <!-- Google font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
@@ -24,7 +33,10 @@
 
       <div class="hero-content">
         <h1 id="typewriter"></h1>
-        <p class="tagline">I design & build delightful digital experiences.</p>
+        <p class="tagline">
+          I blend <strong>mathematics</strong> & <strong>technology</strong> to
+          create solutions that impact lives.
+        </p>
         <a href="#projects" class="btn-primary">See my work</a>
       </div>
 
@@ -42,26 +54,30 @@
 
     <!-- ------------- ABOUT ------------- -->
     <section id="about" class="section hidden">
-      <h2 class="section-title">About me</h2>
+      <h2 class="section-title">About Me</h2>
       <div class="two-col">
         <div>
           <p>
-            Hi! I'm <strong>Your Name</strong>, a front-end developer & UI
-            designer based in Your City. I thrive on turning complex problems
-            into simple, beautiful, intuitive interfaces.
+            Hi! I'm <strong>Isaiah Nnadi</strong>, a passionate learner at the
+            intersection of <em>mathematics, and technology </em>. I enjoy
+            turning ideas into
+            <strong>functional, elegant digital experiences</strong> while also
+            exploring <strong>data-driven insights</strong> to solve real-world
+            problems.
           </p>
           <ul class="skills">
             <li>JavaScript (ES6+)</li>
             <li>React & Next.js</li>
-            <li>CSS / SASS / Tailwind</li>
-            <li>Figma & UI/UX</li>
-            <li>mobie and desktop app dev</li>
+            <li>CSS / Tailwind / SASS</li>
+            <li>Python (Data & AI)</li>
+            <li>Mobile & Desktop App Dev</li>
+            <li>UI/UX & Figma</li>
           </ul>
         </div>
         <img
           src="./img.jpg"
           loading="lazy"
-          alt="Portrait"
+          alt="Portrait of Isaiah"
           class="profile-img"
         />
       </div>
@@ -69,16 +85,16 @@
 
     <!-- ------------- PROJECTS ------------- -->
     <section id="projects" class="section hidden">
-      <h2 class="section-title">Selected work</h2>
+      <h2 class="section-title">Selected Work</h2>
       <div class="grid">
         <!-- Project card -->
         <article class="card">
-          <img src="assets/project1.jpg" alt="Project 1" />
+          <img src="assets/project1.jpg" alt="E-commerce storefront preview" />
           <div class="card-body">
             <h3>E-commerce Storefront</h3>
             <p>Next.js, Stripe, Tailwind</p>
             <a
-              href="https://github.com/you/project1"
+              href="https://github.com/Isaiah44/project1"
               target="_blank"
               class="link"
               >Live demo →</a
@@ -87,12 +103,12 @@
         </article>
 
         <article class="card">
-          <img src="assets/project2.jpg" alt="Project 2" />
+          <img src="assets/project2.jpg" alt="Weather Dashboard preview" />
           <div class="card-body">
             <h3>Weather Dashboard</h3>
             <p>React, Chart.js, OpenWeather API</p>
             <a
-              href="https://github.com/you/project2"
+              href="https://github.com/Isaiah44/project2"
               target="_blank"
               class="link"
               >Live demo →</a
@@ -101,12 +117,12 @@
         </article>
 
         <article class="card">
-          <img src="assets/project3.jpg" alt="Project 3" />
+          <img src="assets/project3.jpg" alt="Portfolio V1 preview" />
           <div class="card-body">
             <h3>Portfolio Website V1</h3>
             <p>Vanilla HTML/CSS/JS</p>
             <a
-              href="https://github.com/you/project3"
+              href="https://github.com/Isaiah44/project3"
               target="_blank"
               class="link"
               >Code →</a
@@ -115,21 +131,78 @@
         </article>
       </div>
     </section>
+    <section id="posts" class="section">
+      <h2 class="section-title">Latest Posts</h2>
+      <div class="grid" id="postGrid">
+        <!-- Posts will go here -->
+        <article class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Post 1" />
+          <div class="card-body">
+            <h3>Post Title One</h3>
+            <p>Short description of the post content goes here.</p>
+          </div>
+        </article>
 
-    <!-- ------------- CONTACT ------------- -->
-    <section id="contact" class="section hidden">
-      <h2 class="section-title">Get in touch</h2>
-      <p>I'm currently open to freelance & full-time opportunities.</p>
-      <a href="mailto:nnadiisaiahmoney@gmail.com" class="btn-primary"
-        >nnadiisaiahmoney@gmail.com</a
-      >
-      <div class="socials">
-        <a href="https://github.com/you" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/you" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com/you" target="_blank">Twitter</a>
+        <article class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Post 2" />
+          <div class="card-body">
+            <h3>Post Title Two</h3>
+            <p>Another description of content to showcase here.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Post 3" />
+          <div class="card-body">
+            <h3>Post Title Three</h3>
+            <p>A simple grid item that adapts beautifully.</p>
+          </div>
+        </article>
       </div>
     </section>
 
+    <!-- ------------- CONTACT ------------- -->
+    <section id="contact" class="section hidden">
+      <h2 class="section-title">Get in Touch</h2>
+      <p>
+        I’m open to
+        <strong>freelance, collaborations, and research-driven projects</strong
+        >. Let’s build something meaningful together!
+      </p>
+
+      <!-- <div class="socials">
+        <a href="https://github.com/Isaiah44" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/isaiah44" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/isaiah44" target="_blank">Twitter</a>
+      </div> -->
+
+      <!-- Inline popup -->
+      <div id="popup" class="popup"></div>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </section>
+
     <script src="main.js"></script>
+    <script
+      type="text/javascript"
+      async
+      src="https://cdn.emailjs.com/sdk/3.2/email.min.js"
+    ></script>
   </body>
 </html>

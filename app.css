@@ -1,19 +1,25 @@
-/* 1. CSS Reset & Variables */
+/* ============================
+   1. CSS Reset & Variables
+============================ */
 :root {
   --bg: #0d1117;
   --bg-soft: #161b22;
   --accent: #58a6ff;
+  --accent-hover: #1f6feb;
   --text: #c9d1d9;
   --text-soft: #8b949e;
   --font: "Inter", system-ui, sans-serif;
-  --radius: 8px;
-  --transition: 0.3s ease;
+  --radius: 12px;
+  --transition: 0.35s ease;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
+
 [data-theme="light"] {
   --bg: #ffffff;
   --bg-soft: #f6f8fa;
   --text: #24292f;
   --text-soft: #656d76;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -21,28 +27,40 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   scroll-behavior: smooth;
+  transition: background var(--transition), color var(--transition);
 }
+
 img {
   width: 100%;
-  height: 20rem;
+  height: auto;
   display: block;
   border-radius: var(--radius);
+  object-fit: cover;
 }
+
 a {
   color: var(--accent);
   text-decoration: none;
+  transition: var(--transition);
 }
+a:hover {
+  color: var(--accent-hover);
+}
+
 ul {
   list-style: none;
 }
 
-/* 2. Layout helpers */
+/* ============================
+   2. Layout helpers
+============================ */
 .full-screen {
   height: 100vh;
   display: flex;
@@ -50,15 +68,18 @@ ul {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 0 2rem;
 }
+
 .section {
   padding: 120px 10vw;
   max-width: 1100px;
   margin: auto;
 }
+
 .two-col {
   display: grid;
-  gap: 40px;
+  gap: 60px;
   align-items: center;
 }
 @media (min-width: 768px) {
@@ -66,6 +87,7 @@ ul {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 .grid {
   display: grid;
   gap: 40px;
@@ -76,55 +98,80 @@ ul {
   }
 }
 
-/* 3. Navbar */
+/* ============================
+   3. Navbar
+============================ */
 nav {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 1.2rem 2rem;
+  left: 0;
+  padding: 1.2rem 3rem;
   display: flex;
-  gap: 1.5rem;
+  justify-content: flex-end;
+  gap: 2rem;
   z-index: 10;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background var(--transition);
 }
 nav a {
   color: var(--text-soft);
   font-weight: 500;
-  transition: var(--transition);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
 }
 nav a:hover {
   color: var(--accent);
 }
 
-/* 4. Hero */
+/* ============================
+   4. Hero
+============================ */
 #hero {
   background: radial-gradient(
     circle at 50% 50%,
     var(--bg-soft) 0%,
-    var(--bg) 70%
+    var(--bg) 80%
   );
   position: relative;
+  overflow: hidden;
 }
+
 .hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 600;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.2;
 }
+
 .tagline {
   margin: 1rem 0 2rem;
   color: var(--text-soft);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .btn-primary {
   background: var(--accent);
-  padding: 0.75rem 1.5rem;
+  padding: 0.9rem 2rem;
   color: #fff;
   border-radius: var(--radius);
   transition: var(--transition);
+  font-weight: 600;
+  box-shadow: var(--shadow);
 }
 .btn-primary:hover {
-  filter: brightness(1.1);
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(88, 166, 255, 0.35);
 }
 
-/* 5. Float icons */
+/* ============================
+   5. Float icons
+============================ */
 .float-icon {
   --size: 40px;
   position: absolute;
@@ -134,96 +181,203 @@ nav a:hover {
   top: calc(var(--y) * 1%);
   animation: float var(--d) infinite ease-in-out;
   pointer-events: none;
+  opacity: 0.4;
 }
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0) rotate(-12deg);
+    transform: translateY(0) rotate(-10deg);
   }
   50% {
-    transform: translateY(-20px) rotate(12deg);
+    transform: translateY(-18px) rotate(12deg);
   }
 }
 
-/* 6. Section titles */
+/* ============================
+   6. Section titles
+============================ */
 .section-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
   position: relative;
+  font-weight: 700;
+  text-align: left;
 }
 .section-title::after {
   content: "";
-  width: 60px;
+  width: 70px;
   height: 4px;
   background: var(--accent);
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 0;
   border-radius: 2px;
 }
 
-/* 7. Cards */
+/* ============================
+   7. Cards
+============================ */
 .card {
   background: var(--bg-soft);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
   transform: translateY(40px);
   opacity: 0;
+  box-shadow: var(--shadow);
 }
 .card.reveal {
   transform: translateY(0);
   opacity: 1;
 }
 .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 .card-body {
-  padding: 1.2rem;
+  padding: 1.5rem;
+}
+.card-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.card-body p {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.5;
 }
 
-/* 8. Skills */
+/* ============================
+   8. Skills
+============================ */
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
   margin-top: 1rem;
 }
 .skills li {
-  background: var(--bg-soft);
-  padding: 0.4rem 0.8rem;
+  background: var(--bg);
+  padding: 0.5rem 0.9rem;
   border-radius: var(--radius);
   font-size: 0.9rem;
-  color: var(--text-soft);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  transition: var(--transition);
+}
+.skills li:hover {
+  background: var(--accent);
+  color: #fff;
 }
 
-/* 9. Contact */
+/* ============================
+   9. Contact & Socials
+============================ */
 .socials {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+.socials a {
+  font-size: 1.4rem;
+  color: var(--text-soft);
+  transition: var(--transition);
+}
+.socials a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
 }
 
-/* 10. Theme toggle */
+/* ============================
+   10. Theme toggle
+============================ */
 #theme-toggle {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   cursor: pointer;
   color: var(--text-soft);
   transition: var(--transition);
 }
 #theme-toggle:hover {
   color: var(--accent);
+  transform: rotate(20deg);
 }
 
-/* 11. Reveal animations */
+/* ============================
+   11. Reveal animations
+============================ */
 .hidden {
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 .reveal {
   opacity: 1;
   transform: translateY(0);
+}
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--text-soft);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  color: var(--text);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(88, 166, 255, 0.35);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  align-self: flex-start;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(88, 166, 255, 0.4);
+}
+
+/* Inline popup inside form section */
+.popup {
+  text-align: center;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: none;
+}
+.popup.success {
+  background: var(--accent);
+  color: #fff;
+}
+.popup.error {
+  background: #e74c3c;
+  color: #fff;
 }
