@@ -1,0 +1,229 @@
+/* 1. CSS Reset & Variables */
+:root {
+  --bg: #0d1117;
+  --bg-soft: #161b22;
+  --accent: #58a6ff;
+  --text: #c9d1d9;
+  --text-soft: #8b949e;
+  --font: "Inter", system-ui, sans-serif;
+  --radius: 8px;
+  --transition: 0.3s ease;
+}
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-soft: #f6f8fa;
+  --text: #24292f;
+  --text-soft: #656d76;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+img {
+  width: 100%;
+  height: 20rem;
+  display: block;
+  border-radius: var(--radius);
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* 2. Layout helpers */
+.full-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section {
+  padding: 120px 10vw;
+  max-width: 1100px;
+  margin: auto;
+}
+.two-col {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.grid {
+  display: grid;
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+/* 3. Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1.2rem 2rem;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 10;
+}
+nav a {
+  color: var(--text-soft);
+  font-weight: 500;
+  transition: var(--transition);
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+/* 4. Hero */
+#hero {
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--bg-soft) 0%,
+    var(--bg) 70%
+  );
+  position: relative;
+}
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+}
+.tagline {
+  margin: 1rem 0 2rem;
+  color: var(--text-soft);
+  font-size: 1.2rem;
+}
+.btn-primary {
+  background: var(--accent);
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+/* 5. Float icons */
+.float-icon {
+  --size: 40px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  left: calc(var(--x) * 1%);
+  top: calc(var(--y) * 1%);
+  animation: float var(--d) infinite ease-in-out;
+  pointer-events: none;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-12deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(12deg);
+  }
+}
+
+/* 6. Section titles */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
+}
+
+/* 7. Cards */
+.card {
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+  transform: translateY(40px);
+  opacity: 0;
+}
+.card.reveal {
+  transform: translateY(0);
+  opacity: 1;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+.card-body {
+  padding: 1.2rem;
+}
+
+/* 8. Skills */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.skills li {
+  background: var(--bg-soft);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+/* 9. Contact */
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* 10. Theme toggle */
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-soft);
+  transition: var(--transition);
+}
+#theme-toggle:hover {
+  color: var(--accent);
+}
+
+/* 11. Reveal animations */
+.hidden {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}

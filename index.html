@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="app.css" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ------------- HERO ------------- -->
+    <section id="hero" class="full-screen">
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" aria-label="toggle dark mode">🌙</button>
+      </nav>
+
+      <div class="hero-content">
+        <h1 id="typewriter"></h1>
+        <p class="tagline">I design & build delightful digital experiences.</p>
+        <a href="#projects" class="btn-primary">See my work</a>
+      </div>
+
+      <!-- decorative icons -->
+      <div class="float-icon" style="--x: 10; --y: 20; --d: 6s">
+        <span>⚡</span>
+      </div>
+      <div class="float-icon" style="--x: 70; --y: 60; --d: 8s">
+        <span>🚀</span>
+      </div>
+      <div class="float-icon" style="--x: 85; --y: 15; --d: 10s">
+        <span>✨</span>
+      </div>
+    </section>
+
+    <!-- ------------- ABOUT ------------- -->
+    <section id="about" class="section hidden">
+      <h2 class="section-title">About me</h2>
+      <div class="two-col">
+        <div>
+          <p>
+            Hi! I'm <strong>Your Name</strong>, a front-end developer & UI
+            designer based in Your City. I thrive on turning complex problems
+            into simple, beautiful, intuitive interfaces.
+          </p>
+          <ul class="skills">
+            <li>JavaScript (ES6+)</li>
+            <li>React & Next.js</li>
+            <li>CSS / SASS / Tailwind</li>
+            <li>Figma & UI/UX</li>
+            <li>mobie and desktop app dev</li>
+          </ul>
+        </div>
+        <img
+          src="./img.jpg"
+          loading="lazy"
+          alt="Portrait"
+          class="profile-img"
+        />
+      </div>
+    </section>
+
+    <!-- ------------- PROJECTS ------------- -->
+    <section id="projects" class="section hidden">
+      <h2 class="section-title">Selected work</h2>
+      <div class="grid">
+        <!-- Project card -->
+        <article class="card">
+          <img src="assets/project1.jpg" alt="Project 1" />
+          <div class="card-body">
+            <h3>E-commerce Storefront</h3>
+            <p>Next.js, Stripe, Tailwind</p>
+            <a
+              href="https://github.com/you/project1"
+              target="_blank"
+              class="link"
+              >Live demo →</a
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/project2.jpg" alt="Project 2" />
+          <div class="card-body">
+            <h3>Weather Dashboard</h3>
+            <p>React, Chart.js, OpenWeather API</p>
+            <a
+              href="https://github.com/you/project2"
+              target="_blank"
+              class="link"
+              >Live demo →</a
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/project3.jpg" alt="Project 3" />
+          <div class="card-body">
+            <h3>Portfolio Website V1</h3>
+            <p>Vanilla HTML/CSS/JS</p>
+            <a
+              href="https://github.com/you/project3"
+              target="_blank"
+              class="link"
+              >Code →</a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ------------- CONTACT ------------- -->
+    <section id="contact" class="section hidden">
+      <h2 class="section-title">Get in touch</h2>
+      <p>I'm currently open to freelance & full-time opportunities.</p>
+      <a href="mailto:nnadiisaiahmoney@gmail.com" class="btn-primary"
+        >nnadiisaiahmoney@gmail.com</a
+      >
+      <div class="socials">
+        <a href="https://github.com/you" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/you" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/you" target="_blank">Twitter</a>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
